@@ -1,4 +1,4 @@
-![](https://github.com/ohua-dev/ohua/blob/master/ohua_logo.jpg "Ohua")
+![](ohua/ohua_logo.jpg "Ohua")
 
 ## Ohua - Implicit Parallel Programming for the Masses
 
