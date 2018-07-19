@@ -4,7 +4,7 @@ The goal of this project is to release the developer from the burden to deal wit
 
 ### So, what is your programming model then?
 
-The heart of our programming model is the concept of a **stateful function**, that is a function that may use some additional state to compute a result. 
+The heart of our programming model is the concept of a **stateful function**, that is a function that may use some additional state to compute a result.
 
 _-- What?! That's not new, I do that all the time when I write code!_
 
@@ -30,7 +30,7 @@ impl State {
       _alreadyGreeted = LinkedList::new()
     }
   }
-  
+
   fn greetings(&self, name:String) -> String {
     let hello = String::from("Hello ");
     let ag:String = self._alreadyGreeted.into_iter().collect();
