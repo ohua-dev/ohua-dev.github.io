@@ -22,21 +22,20 @@ class State {
 
 ```rust
 struct State {
-  _alreadyGreeted: LinkedList<String>
+  alreadyGreeted: Vec<String>
 }
 
 impl State {
   pub fn new() -> State {
     State {
-      _alreadyGreeted = LinkedList::new()
+      alreadyGreeted = Vec::new()
     }
   }
 
-  fn greetings(&self, name:String) -> String {
-    let hello = String::from("Hello ");
-    let ag:String = self._alreadyGreeted.into_iter().collect();
-    let greeting = hello + &name + "\nI already greeted all these guys: " + &ag;
-    self._alreadyGreeted.add(name);
+  fn greetings(&mut self, name:String) -> String {
+    let ag = self.alreadyGreeted.join(", ");
+    let greeting = format!("Hello {}\nI already greeted all these guys: {}", name, ag);
+    self.alreadyGreeted.add(name);
     greeting
   }
 }
