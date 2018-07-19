@@ -1,10 +1,8 @@
-![](https://raw.githubusercontent.com/ohua-dev/ohua/master/ohua_logo.png "Ohua")
-
-## Ohua - Implicit Parallel Programming for the Masses
+# Ohua - Implicit Parallel Programming for the Masses
 
 The goal of this project is to release the developer from the burden to deal with constructs for parallelism such as threads, tasks and processes and their respective synchronization mechanism such as locks, messages, futures etc. We provide a programming model that is free of new abstractions but still allows the compiler and runtime system to exploit the inherent parallelism in your program.
 
-### So, what is your programming model then?
+## So, what is your programming model then?
 
 The heart of our programming model is the concept of a **stateful function**, that is a function that may use some additional state to compute a result.
 
@@ -24,21 +22,20 @@ class State {
 
 ```rust
 struct State {
-  _alreadyGreeted: LinkedList<String>
+  alreadyGreeted: Vec<String>
 }
 
 impl State {
   pub fn new() -> State {
     State {
-      _alreadyGreeted = LinkedList::new()
+      alreadyGreeted = Vec::new()
     }
   }
 
-  fn greetings(&self, name:String) -> String {
-    let hello = String::from("Hello ");
-    let ag:String = self._alreadyGreeted.into_iter().collect();
-    let greeting = hello + &name + "\nI already greeted all these guys: " + &ag;
-    self._alreadyGreeted.add(name);
+  fn greetings(&mut self, name:String) -> String {
+    let ag = self.alreadyGreeted.join(", ");
+    let greeting = format!("Hello {}\nI already greeted all these guys: [{}]\n", name, ag);
+    self.alreadyGreeted.add(name);
     greeting
   }
 }
@@ -66,7 +63,7 @@ _--  Ok, I got that but show me some parallelism already!_
 Well, that's about it. You won't see any parallelism in the code. That's the whole point of Ohua. You don't have to worry about it, the compiler and runtime system will do that for you! In the above code, Ohua finds the pipeline parallelism between `greetings` and `printToStdOut` and tells the runtime system to compute the next greeting in parallel to printing the current one.
 
 
-### Foundation
+## Foundation
 
 In the literature, our stateful functions are referred to as **state threads**. In contrast to _pure_ functions, state threads may have _side-effects_ to their own private state. The foundation for composing state threads is a call-by-need lambda calculus.
 
