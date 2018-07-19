@@ -1,37 +1,69 @@
-## Welcome to GitHub Pages
+## Ohua - Implicit Parallel Programming for Everyone
 
-You can use the [editor on GitHub](https://github.com/ohua-dev/ohua.github.io/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
+The goal of this project is to release the developer from the burden to deal with constructs for parallelism such as threads, tasks and processes and their respective synchronization mechanism such as locks, messages, futures etc. We provide a programming model that is free of new abstractions but still allows the compiler and runtime system to exploit the inherent parallelism in your program.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+### So, what is your programming model then?
 
-### Markdown
+The heart of our programming model is the concept of a **stateful function**, that is a function that may use some additional state to compute a result. 
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+_-- What?! That's not new, I do that all the time when I write code!_
 
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+```java
+class State {
+  private List<String> _alreadyGreeted = new LinkedList<>();
+  String greetings(String name){
+    String greeting = "Hello " + name + "\nI already greeted all these guys: " + _alreadyGreeted;
+    _alreadyGreeted.add(name);
+    return greeting;
+  }
+}
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+```rust
+struct State {
+  _alreadyGreeted: LinkedList<String>
+}
 
-### Jekyll Themes
+impl State {
+  pub fn new() -> State {
+    State {
+      _alreadyGreeted = LinkedList::new()
+    }
+  }
+  
+  fn greetings(&self, name:String) -> String {
+    let hello = String::from("Hello ");
+    let ag:String = self._alreadyGreeted.into_iter().collect();
+    let greeting = hello + &name + "\nI already greeted all these guys: " + &ag;
+    self._alreadyGreeted.add(name);
+    greeting
+  }
+}
+```
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/ohua-dev/ohua.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+That's right. In Ohua, the `greetings` function is a stateful function and you can use it now as any other function when writing your program.
 
-### Support or Contact
+```java
+for(String friend : friends){
+  val greeting = greetings(friend);
+  printToStdOut(greeting);
+}
+```
 
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+Note that you do not have to instantiate the `State` for the `greetings` (and the `printToStdOut`) function. Ohua does that for you and makes sure that you `greetings` operates on one and the same `State` object for each greeted friend. This allows it to gather all the friends in `_alreadyGreeted`.
+
+_--  Ok, I got that but show me some parallelism already!_
+
+Well, that's about it. You won't see any parallelism in the code. That's the whole point of Ohua. You don't have to worry about it, the compiler and runtime system will do that for you! In the above code, Ohua finds the pipeline parallelism between `greetings` and `printToStdOut` and tell the runtime system to compute the next greeting in parallel to printing the current one.
+
+
+### Foundation
+
+In the literature, our stateful functions are referred to as **state threads**. In contrast to _pure_ functions, state threads may have _side-effects_ to their own private state. The foundation for composing state threads is a call-by-need lambda calculus.
+
+
+### Logo
+
+
+Official artwork for the Rust project. This artwork is distributed under the terms of the [Creative Commons Attribution license (CC-BY)](https://creativecommons.org/licenses/by/4.0/). This is the most permissive Creative Commons license, and allows reuse and modifications for any purpose. The restrictions are that distributors must “give appropriate credit, provide a link to the license, and indicate if changes were made”.
+We are thankful to [Lucas Vogel](https://github.com/lucasvog) for this cool logo!
