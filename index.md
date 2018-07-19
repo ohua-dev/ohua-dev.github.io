@@ -1,4 +1,6 @@
-## Ohua - Implicit Parallel Programming for Everyone
+![alt text](https://github.com/ohua-dev/ohua.github.io/blob/master/ohua_logo.jpg "Ohua")
+
+## Ohua - Implicit Parallel Programming for the Masses
 
 The goal of this project is to release the developer from the burden to deal with constructs for parallelism such as threads, tasks and processes and their respective synchronization mechanism such as locks, messages, futures etc. We provide a programming model that is free of new abstractions but still allows the compiler and runtime system to exploit the inherent parallelism in your program.
 
@@ -62,8 +64,8 @@ Well, that's about it. You won't see any parallelism in the code. That's the who
 In the literature, our stateful functions are referred to as **state threads**. In contrast to _pure_ functions, state threads may have _side-effects_ to their own private state. The foundation for composing state threads is a call-by-need lambda calculus.
 
 
-### Logo
 
+***
 
-Official artwork for the Rust project. This artwork is distributed under the terms of the [Creative Commons Attribution license (CC-BY)](https://creativecommons.org/licenses/by/4.0/). This is the most permissive Creative Commons license, and allows reuse and modifications for any purpose. The restrictions are that distributors must “give appropriate credit, provide a link to the license, and indicate if changes were made”.
+The artwork (logo, images, etc.) for the Ohua project is distributed under the terms of the [Creative Commons Attribution license (CC-BY)](https://creativecommons.org/licenses/by/4.0/). This is the most permissive Creative Commons license, and allows reuse and modifications for any purpose. The restrictions are that distributors must “give appropriate credit, provide a link to the license, and indicate if changes were made”.
 We are thankful to [Lucas Vogel](https://github.com/lucasvog) for this cool logo!
