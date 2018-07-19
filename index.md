@@ -34,7 +34,7 @@ impl State {
 
   fn greetings(&mut self, name:String) -> String {
     let ag = self.alreadyGreeted.join(", ");
-    let greeting = format!("Hello {}\nI already greeted all these guys: {}", name, ag);
+    let greeting = format!("Hello {}\nI already greeted all these guys: [{}]\n", name, ag);
     self.alreadyGreeted.add(name);
     greeting
   }
