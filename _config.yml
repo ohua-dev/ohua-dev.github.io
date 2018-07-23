@@ -1,3 +1,8 @@
 theme: jekyll-theme-minimal
 logo: ohua_logo.png
 show_downloads: true
+project_links:
+  - https://tud-ccc.github.io/yauhau-doc/
+  - ["https://ohua.readthedocs.io/", "Ohua in-depth documentation"]
+plugins:
+  - jekyll-seo-tag

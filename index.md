@@ -1,3 +1,6 @@
+---
+layout: default
+---
 # Ohua - Implicit Parallel Programming for the Masses
 
 The goal of this project is to release the developer from the burden to deal with constructs for parallelism such as threads, tasks and processes and their respective synchronization mechanism such as locks, messages, futures etc. We provide a programming model that is free of new abstractions but still allows the compiler and runtime system to exploit the inherent parallelism in your program.
