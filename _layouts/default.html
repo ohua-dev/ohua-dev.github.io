@@ -52,7 +52,7 @@
     <a id="skip-to-content" class="skip-main" href="#content">Skip to the content.</a>
 
     <header class="page-header" role="banner">
-        <img src="logos/withBackground/color/export_compact.png" height="92px" align="left">
+        <img src="/logos/withBackground/color/export_compact.png" height="92px" align="left">
       <h1 class="project-name">{{ page.title | default: site.title | default: site.github.repository_name }}</h1>
       <h2 class="project-tagline">{{ page.description | default: site.description | default: site.github.project_tagline }}</h2>
       {% if site.github.is_project_page %}
@@ -65,6 +65,13 @@
     </header>
 
     <main id="content" class="main-content" role="main">
+        <!-- <nav>
+             {% for page in site.pages %}
+             {% if page.title %}
+             <a class="page-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
+             {% endif %}
+             {% endfor %}
+             </nav> -->
       {{ content }}
 
       <footer class="site-footer">

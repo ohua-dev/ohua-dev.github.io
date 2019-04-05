@@ -26,7 +26,7 @@ simple_example_ohua:
         }
     - type: java
       code: |
-        var state = new State();
+        var state = State.create();
         for (String friend : friends) {
           var greeting = greetings(friend);
           printToStdOut(greeting);
