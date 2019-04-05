@@ -51,29 +51,12 @@ parallelism between `greetings` and `printToStdOut` and tells the runtime system
 to compute the next greeting in parallel to printing the current one.
 
 
-## Foundation
-
-In the literature, our stateful functions are referred to as **state threads**.
-In contrast to _pure_ functions, state threads may have _side-effects_ to their
-own private state. The foundation for composing state threads is a call-by-need
-lambda calculus.
-
 ## Publications
 
 Here we list the papers we have published about Ohua and its applications.
 
-Our [first paper](https://dl.acm.org/citation.cfm?id=2807431) on the subject
-introduces the basics of the dataflow model underlying Ohua, the notion of
-stateful functions and high level algorithms. It was published in 2015 at PPPJ.
-
-The [Yauhau](https://dl.acm.org/citation.cfm?id=3179505) project is a compiler
-plugin for Ohua that improves the performance of I/O heavy applications through
-automatic batching and caching. The paper was published at CC in 2018 and the
-project also has [it's own website](/yauhau/).
-
-At PMAM in 2018 we [published a
-paper](https://cfaed.tu-dresden.de/files/Images/people/chair-cc/publications/1802_Ertel_PMAM.pdf)
-where we used Ohua to rewrite the core of Hadoop to increase the
-read-decode-process-encode pipeline of both map and reduce workers.
+* The idea of stateful functions and algorithms that a compiler can translate into a dataflow-based runtime system can be found [here](https://dl.acm.org/citation.cfm?id=2807431).
+* Stateful loops (`smap`) and their translation into dataflow have been applied to bottlenecks in big data engines have been published [here](https://cfaed.tu-dresden.de/files/Images/people/chair-cc/publications/1802_Ertel_PMAM.pdf).
+* Some internals of our compiler and transformations to optimize I/O in the context of micro-service deployments can be found [here](/yauhau/) and were published also [here](https://dl.acm.org/citation.cfm?id=3179505).
 
 For a more extensive and structured view see the [bibliography](/bib/).
