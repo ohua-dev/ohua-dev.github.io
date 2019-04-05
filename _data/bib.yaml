@@ -1,0 +1,99 @@
+- title: Compiling for concise code and efficient I/O
+  publication: Proceedings of the 27th International Conference on Compiler Construction
+  link: https://dl.acm.org/citation.cfm?id=3179505
+  authors:
+    - Sebastian Ertel
+    - Andrés Goens
+    - Justus Adam
+    - Jeronimo Castrillon
+  date: "2018-02-24"
+  website: /yauhau/
+  abstract: |
+    Large infrastructures of Internet companies, such as Facebook and Twitter,
+    are composed of several layers of micro-services. While this modularity
+    provides scalability to the system, the I/O associated with each service
+    request strongly impacts its performance. In this context, writing concise
+    programs which execute I/O efficiently is especially challenging. In this
+    paper, we introduce Ÿauhau, a novel compile-time solution. Ÿauhau reduces
+    the number of I/O calls through rewrites on a simple expression language. To
+    execute I/O concurrently, it lowers the expression language to a dataflow
+    representation. Our approach can be used alongside an existing programming
+    language, permitting the use of legacy code. We describe an implementation
+    in the JVM and use it to evaluate our approach. Experiments show that Ÿauhau
+    can significantly improve I/O, both in terms of the number of I/O calls and
+    concurrent execution. Ÿauhau outperforms state-of-the-art approaches with
+    similar goals.
+- title: Supporting Fine-grained Dataflow Parallelism in Big Data Systems.
+  publication: PMAM@ PPoPP
+  date: "2018-02-24"
+  authors:
+    - Sebastian Ertel
+    - Justus Adam
+    - Jeronimo Castrillon
+  link: https://cfaed.tu-dresden.de/files/Images/people/chair-cc/publications/1802_Ertel_PMAM.pdf
+  abstract: |
+    Big data systems scale with the number of cores in a cluster for the parts
+    of an application that can be executed in data parallel fashion. It has been
+    recently reported, however, that these systems fail to translate hardware
+    improvements, such as increased network bandwidth, into a higher throughput.
+    This is particularly the case for applications that have inherent
+    sequential, computationally intensive phases. In this paper, we analyze the
+    data processing cores of state-of-the-art big data systems to find the cause
+    for these scalability problems. We identify design patterns in the code that
+    are suitable for pipeline and task-level parallelism, potentially increasing
+    application performance. As a proof of concept, we rewrite parts of the
+    Hadoop MapReduce framework in an implicit parallel language that exploits
+    this parallelism without adding code complexity. Our experiments on a data
+    analytics workload show throughput speedups of up to 3.5x.
+- title: Control Flow and Side Effects support in a Framework for automatic I/O batching
+  date: "2017-05-9"
+  authors: [Justus Adam]
+  note: Bachelors Thesis
+  institution: Technische Universität Dresden
+  link: https://cfaed.tu-dresden.de/files/user/sertel/BachelorsThesis-Justus-Adam.pdf
+  abstract: |
+    The largest source of latency for many modern systems, particularly
+    services, is the inherent latency of I/O operations. Disk I/O, database
+    access and network bound communication is frequent, especially in data
+    processing systems and distributed service infrastructures. Making I/O
+    efficient is cumbersome, involves asynchronous programming and caching and
+    hinders modularity when attempting to perform batch jobs. There have been a
+    few solutions proposed to automate this, first and foremost Haxl, a Haskell
+    library. We proposed an alternate, improved implementation called Ÿauhau. It
+    leverages dataflow to produce even better performance while being
+    independent from any particular code writing style in a minimal Embedded
+    Domain-Specific Language (EDSL). In this thesis we first explore the
+    techniques used by Ÿauhau to make I/O more efficient. Secondly we identify,
+    explain and solve issues in Ÿauhau arising from control flow. Furthermore we
+    suggest new optimisations for the compiler and implement safety guards for
+    handling side effects.
+- title: "Ohua: Implicit Dataflow Programming for Concurrent Systems"
+  date: "2015-09-08"
+  authors:
+    - Sebastian Ertel
+    - Christoph Fetzer
+    - Pascal Felber
+  publication: Proceedings of the Principles and Practices of Programming on The Java Platform
+  link: https://dl.acm.org/citation.cfm?id=2807431
+  abstract: |
+    Concurrent programming has always been a challenging task best left to
+    expert developers. Yet, with the advent of multi-core systems, programs have
+    to explicitly deal with multithreading to fully exploit the parallel
+    processing capabilities of the underlying hardware. There has been much
+    research over the last decade on abstractions to develop concurrent code
+    that is both safe and efficient, e.g., using message passing, transactional
+    memory, or event-based programming. In this paper, we focus on the dataflow
+    approach as a way to design scalable concurrent applications. We propose a
+    new dataflow engine and programming framework, named Ohua, that supports
+    implicit parallelism. Ohua marries object-oriented and functional languages:
+    functionality developed in Java can be composed with algorithms in Clojure.
+    This allows us to use different programming styles for the tasks each
+    language is best adapted for. The actual dataflow graphs are automatically
+    derived from the Clojure code. We show that Ohua is not only powerful and
+    easy to use for the programmer, but also produces applications that scale
+    remarkably well: comparative evaluation indicates that a simple web server
+    developed with Ohua outperforms the highly-optimized Jetty server in terms
+    of throughput while being competitive in terms of latency. We also evaluate
+    the impact on energy consumption to validate previous studies indicating
+    that dataflow and message passing can be more energy-efficient than
+    concurrency control based on shared-memory synchronization.
