@@ -23,6 +23,8 @@
     can significantly improve I/O, both in terms of the number of I/O calls and
     concurrent execution. Ÿauhau outperforms state-of-the-art approaches with
     similar goals.
+  paper: https://cfaed.tu-dresden.de/files/Images/people/chair-cc/publications/1802_Ertel_CC.pdf
+  slides: https://cfaed.tu-dresden.de/files/user/sertel/publications/cc-2018-slides.pdf
 - title: Supporting Fine-grained Dataflow Parallelism in Big Data Systems.
   publication: PMAM@ PPoPP
   date: "2018-02-24"
@@ -30,7 +32,7 @@
     - Sebastian Ertel
     - Justus Adam
     - Jeronimo Castrillon
-  link: https://cfaed.tu-dresden.de/files/Images/people/chair-cc/publications/1802_Ertel_PMAM.pdf
+  link: https://dl.acm.org/citation.cfm?doid=3178442.3178447
   abstract: |
     Big data systems scale with the number of cores in a cluster for the parts
     of an application that can be executed in data parallel fashion. It has been
@@ -45,6 +47,8 @@
     Hadoop MapReduce framework in an implicit parallel language that exploits
     this parallelism without adding code complexity. Our experiments on a data
     analytics workload show throughput speedups of up to 3.5x.
+  paper: https://cfaed.tu-dresden.de/files/Images/people/chair-cc/publications/1802_Ertel_PMAM.pdf
+  slides: https://cfaed.tu-dresden.de/files/user/sertel/publications/pmam-2018-slides.pdf
 - title: Control Flow and Side Effects support in a Framework for automatic I/O batching
   date: "2017-05-9"
   authors: [Justus Adam]
@@ -97,3 +101,5 @@
     the impact on energy consumption to validate previous studies indicating
     that dataflow and message passing can be more energy-efficient than
     concurrency control based on shared-memory synchronization.
+  paper: https://cfaed.tu-dresden.de/files/user/sertel/ohua_pppj.pdf
+  slides: https://cfaed.tu-dresden.de/files/user/sertel/presentation_pppj.pdf
