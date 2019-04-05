@@ -19,6 +19,8 @@ p.institution }}_{% endif %}
 {% if p.abstract %}{{p.abstract}}{% endif %}
 
 {% if p.website %}Project [website]({{p.website}}){% endif %}
+{% if p.paper %}Project [paper]({{p.paper}}){% endif %}
+{% if p.slides %}Project [slides]({{p.slides}}){% endif %}
 {% unless forloop.last %}
 <hr width="36%">
 {% endunless %}
