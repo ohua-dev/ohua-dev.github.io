@@ -1,10 +1,20 @@
+---
+redirect_from: "/ohua"
+---
+
 # Ohua - Implicit Parallel Programming for the Masses
 
-The goal of this project is to release the developer from the burden to deal with constructs for parallelism such as threads, tasks and processes and their respective synchronization mechanism such as locks, messages, futures etc. We provide a programming model that is free of new abstractions but still allows the compiler and runtime system to exploit the inherent parallelism in your program.
+The goal of this project is to release the developer from the burden to deal
+with constructs for parallelism such as threads, tasks and processes and their
+respective synchronization mechanism such as locks, messages, futures etc. We
+provide a programming model that is free of new abstractions but still allows
+the compiler and runtime system to exploit the inherent parallelism in your
+program.
 
 ## So, what is your programming model then?
 
-The heart of our programming model is the concept of a **stateful function**, that is a function that may use some additional state to compute a result.
+The heart of our programming model is the concept of a **stateful function**,
+that is a function that may use some additional state to compute a result.
 
 _-- What?! That's not new, I do that all the time when I write code!_
 
