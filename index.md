@@ -54,7 +54,7 @@ to compute the next greeting in parallel to printing the current one.
 
 - Parallelize your Rust code with the [ohua-rust-runtime](https://github.com/ohua-dev/ohua-rust-runtime)
 - The standalone compiler for algorithms: [ohuac](https://github.com/ohua-dev/ohuac) (usually used in conjunction with an Ohua backend/runtime)
-- Make your enterprise application both fast and secure with the [ohua-jvm-integration](https://github.com/ohua-dev/ohua-jvm-integration) with support for both Java and Clojure (also on [clojars](https://clojars.org/ohua)
+- Make your enterprise application both fast and secure with the [ohua-jvm-integration](https://github.com/ohua-dev/ohua-jvm-integration) with support for both Java and Clojure (also on [clojars](https://clojars.org/ohua))
 - Batch you I/O with little to no effort using the [Yauhau project](https://github.com/ohua-dev/yauhau)
 - Hack on/with the [ohua-core](https://github.com/ohua-dev/ohua-core) library to make your own Ohua or help us make it better
 
