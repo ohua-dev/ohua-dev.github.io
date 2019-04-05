@@ -17,11 +17,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#157878">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+    <style>
+     a.skip-main {
+         left:-999px;
+         position:absolute;
+         top:auto;
+         width:1px;
+         height:1px;
+         overflow:hidden;
+         z-index:-999;
+     }
+     a.skip-main:focus, a.skip-main:active {
+         color: #fff;
+         background-color:#000;
+         left: auto;
+         top: auto;
+         width: 30%;
+         height: auto;
+         overflow:auto;
+         margin: 10px 35%;
+         padding:5px;
+         border-radius: 15px;
+         border:4px solid yellow;
+         text-align:center;
+         font-size:1.2em;
+         z-index:999;
+     }
+    </style>
   </head>
   <body>
-    <a id="skip-to-content" href="#content">Skip to the content.</a>
+    <a id="skip-to-content" class="skip-main" href="#content">Skip to the content.</a>
 
     <header class="page-header" role="banner">
       <h1 class="project-name">{{ page.title | default: site.title | default: site.github.repository_name }}</h1>

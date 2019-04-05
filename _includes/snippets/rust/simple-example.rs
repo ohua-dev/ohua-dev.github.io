@@ -1,4 +1,3 @@
-
 struct State {
     already_greeted: Vec<String>
 }

@@ -3,6 +3,8 @@ logo: logos/transparent/color/export_wide.png
 plugins:
   - jekyll-redirect-from
 
+title: Ohua - Implicit Parallel Programming for the Masses
+
 # I talked to felix, we think it would be a good idea to package the rust
 # backend with ohuac and a readme + example via travis into a zip/tar.gz and add
 # that as the download here.

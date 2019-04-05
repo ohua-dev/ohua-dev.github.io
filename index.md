@@ -3,8 +3,6 @@ redirect_from: "/ohua/"
 layout: default
 ---
 
-# Ohua - Implicit Parallel Programming for the Masses
-
 The goal of this project is to release the developer from the burden to deal
 with constructs for parallelism such as threads, tasks and processes and their
 respective synchronization mechanism such as locks, messages, futures etc. We
