@@ -1,5 +1,5 @@
 ---
-redirect_from: "/ohua"
+redirect_from: "/ohua/"
 ---
 
 # Ohua - Implicit Parallel Programming for the Masses
