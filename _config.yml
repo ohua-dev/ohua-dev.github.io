@@ -1,5 +1,14 @@
 theme: jekyll-theme-cayman
 logo: logos/transparent/color/export_wide.png
-show_downloads: true
 plugins:
   - jekyll-redirect-from
+
+# I talked to felix, we think it would be a good idea to package the rust
+# backend with ohuac and a readme + example via travis into a zip/tar.gz and add
+# that as the download here.
+# Since those things are not finshed yet however I have turned those links off
+# for the time being.
+show_downloads: false
+github:
+  zip_url: https://github.com/ohua-dev/ohua-rust-backend/releases/latest/download/quickstart.zip
+  tar_url: https://github.com/ohua-dev/ohua-rust-backend/releases/latest/download/quickstart.tar.gz

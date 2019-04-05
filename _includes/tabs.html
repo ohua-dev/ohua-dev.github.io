@@ -1,0 +1,26 @@
+{% assign input = include.input %}
+
+<div class="tabs">
+    {% assign name = input.name | downcase | replace: " ", "-" %}
+    <ul>
+        {% for elem in input.fragments %}
+        <li><a href="#tag-fragment-{{name}}-{{elem.type}}">{{ elem.type | captialize }}</a></li>
+        {% endfor %}
+    </ul>
+    {% for elem in input.fragments %}
+    <div id="tag-fragment-{{name}}-{{elem.type}}">
+        {% case elem.type %}
+
+        {% when 'rust' %}
+        {% highlight rust %}{% if elem.file %}{% include {{ elem.file }} %}{% else %}{{elem.code}}{% endif %}{% endhighlight %}
+
+        {% when 'java' %}
+        {% highlight java %}{% if elem.file %}{% include {{ elem.file }} %}{% else %}{{elem.code}}{% endif %}{% endhighlight %}
+
+        {% endcase %}
+        {% if elem.file %}
+        Snippet source code on <a href="https://github.com/ohua-dev/ohua-dev.github.io/blob/master/{{elem.file}}">GitHub</a>
+        {% endif %}
+    </div>
+    {% endfor %}
+</div>

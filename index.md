@@ -1,5 +1,6 @@
 ---
 redirect_from: "/ohua/"
+layout: default
 ---
 
 # Ohua - Implicit Parallel Programming for the Masses
@@ -18,47 +19,11 @@ that is a function that may use some additional state to compute a result.
 
 _-- What?! That's not new, I do that all the time when I write code!_
 
-```java
-class State {
-  private List<String> _alreadyGreeted = new LinkedList<>();
-
-  String greetings(String name){
-    String greeting = "Hello " + name + "\nI already greeted all these guys: " + _alreadyGreeted;
-    _alreadyGreeted.add(name);
-    return greeting;
-  }
-}
-```
-
-```rust
-struct State {
-  alreadyGreeted: Vec<String>
-}
-
-impl State {
-  pub fn new() -> State {
-    State {
-      alreadyGreeted = Vec::new()
-    }
-  }
-
-  fn greetings(&mut self, name:String) -> String {
-    let ag = self.alreadyGreeted.join(", ");
-    let greeting = format!("Hello {}\nI already greeted all these guys: [{}]\n", name, ag);
-    self.alreadyGreeted.add(name);
-    greeting
-  }
-}
-```
+{% include tabs.html input=site.data.code.simple_example %}
 
 That's right. In Ohua, the `greetings` function is a stateful function and you can use it now as any other function when writing your program.
 
-```java
-for(String friend : friends){
-  val greeting = greetings(friend);
-  printToStdOut(greeting);
-}
-```
+{% include tabs.html input=site.data.code.simple_example_ohua %}
 
 Note that you do not have to instantiate the `State` for the `greetings` (and the `printToStdOut`) function. Ohua does that for you and makes sure that you `greetings` operates on one and the same `State` object for each greeted friend. This allows it to gather all the friends in `_alreadyGreeted`. For a list of `friends` containing `Java`, `Rust` and `JavaScript`, the program would print the following to standard out:
 
@@ -80,6 +45,7 @@ In the literature, our stateful functions are referred to as **state threads**. 
 
 
 ***
-
+<small>
 The artwork (logo, images, etc.) for the Ohua project is distributed under the terms of the [Creative Commons Attribution license (CC-BY)](https://creativecommons.org/licenses/by/4.0/). This is the most permissive Creative Commons license, and allows reuse and modifications for any purpose. The restrictions are that distributors must “give appropriate credit, provide a link to the license, and indicate if changes were made”.
 We are thankful to [Lucas Vogel](https://github.com/lucasvog) for this cool logo!
+</small>

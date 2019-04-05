@@ -1,0 +1,33 @@
+# Examples here always need a distinct `name` property. For the fragments as
+# many languages as desired can be provided, but must be unique. The order of
+# the fragments determines the order of the tabs.
+# Currently supported languages (`type`) are `java` and `rust`, if you want to
+# add more you have to extend the `case` block in `tabs.html` accordingly.
+# The code can either be specified as a `file`, which will also create a link to
+# the source file on github. Alternatively a literal string can be provided via `code`.
+
+simple_example:
+  name: Basic Example
+  fragments:
+    - type: rust
+      file: snippets/rust/simple-example.rs
+    - type: java
+      file: snippets/java/SimpleExample.java
+
+simple_example_ohua:
+  name: Simple Ohua Example
+  fragments:
+    - type: rust
+      code: |
+        let state = State::new();
+        for friend in friends {
+          let greeting = state.greetings(friend);
+          print(greetings);
+        }
+    - type: java
+      code: |
+        val state = new State();
+        for (String friend : friends) {
+          val greeting = greetings(friend);
+          printToStdOut(greeting);
+        }
