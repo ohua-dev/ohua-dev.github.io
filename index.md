@@ -71,7 +71,7 @@ plugin for Ohua that improves the performance of I/O heavy applications through
 automatic batching and caching. The paper was published at CC in 2018 and the
 project also has [it's own website](/yauhau/).
 
-At PPoPP in 2018 we [published a
+At PMAM in 2018 we [published a
 paper](https://cfaed.tu-dresden.de/files/Images/people/chair-cc/publications/1802_Ertel_PMAM.pdf)
 where we used Ohua to rewrite the core of Hadoop to increase the
 read-decode-process-encode pipeline of both map and reduce workers.
