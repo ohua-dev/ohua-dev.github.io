@@ -20,7 +20,7 @@ _-- What?! That's not new, I do that all the time when I write code!_
 
 {% include tabs.html input=site.data.code.simple_example %}
 
-You can now use it like a regular method.
+You can now use it like a regular method in an **algorithm**.
 
 {% include tabs.html input=site.data.code.simple_example_ohua %}
 
