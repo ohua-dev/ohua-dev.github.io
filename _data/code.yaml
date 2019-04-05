@@ -26,8 +26,8 @@ simple_example_ohua:
         }
     - type: java
       code: |
-        val state = new State();
+        var state = new State();
         for (String friend : friends) {
-          val greeting = greetings(friend);
+          var greeting = greetings(friend);
           printToStdOut(greeting);
         }
