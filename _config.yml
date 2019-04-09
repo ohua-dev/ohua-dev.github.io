@@ -12,5 +12,5 @@ title: Ohua - Implicit Parallel Programming for the Masses
 # for the time being.
 show_downloads: false
 github:
-  zip_url: https://github.com/ohua-dev/ohua-rust-backend/releases/latest/download/quickstart.zip
-  tar_url: https://github.com/ohua-dev/ohua-rust-backend/releases/latest/download/quickstart.tar.gz
+  download_link_trunk: https://github.com/ohua-dev/ohua-rust-runtime/releases/latest/download/quickstart-
+  releases_url: https://github.com/ohua-dev/ohua-rust-runtime/releases/latest

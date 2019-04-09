@@ -47,6 +47,39 @@
          z-index:999;
      }
     </style>
+    {% if site.show_downloads %}
+    <script>
+     (() => {
+         document.addEventListener(
+             'DOMContentLoaded',
+             () => {
+                 const testP = (p) => navigator.platform.includes(p);
+                 let plt = null;
+                 if (testP("Mac")) {
+                     plt = {short: "mac", pretty: "Mac OS" };
+                 } else if (testP("Linux")) {
+                     plt = {short: "linux", pretty: "Linux" };
+                 } else if (testP("Win")) {
+                     // Bundle a windows version!
+                     // plt = { short: "win", pretty: "Windows" };
+                 }
+                 const dlElem = document.getElementById("download-links");
+                 const doEdit = (type, ftype) => {
+                     const elem = document.createElement("a");
+                     const platformDL = "{{ site.github.download_link_trunk }}" + plt.short + ftype;
+                     elem.href = platformDL;
+                     elem.classList.add("btn");
+                     elem.innerHTML = "Download for " + plt.pretty + " (" + ftype + ")";
+                     dlElem.appendChild(elem);
+                 };
+                 if (!(plt === null)) {
+                     doEdit("tar", ".tar.gz");
+                     doEdit("zip", ".zip");
+                 }
+             }
+         )})();
+    </script>
+    {% endif %}
   </head>
   <body>
     <a id="skip-to-content" class="skip-main" href="#content">Skip to the content.</a>
@@ -59,8 +92,8 @@
         <a href="{{ site.github.repository_url }}" class="btn">View on GitHub</a>
       {% endif %}
       {% if site.show_downloads %}
-        <a href="{{ site.github.zip_url }}" class="btn">Download .zip</a>
-        <a href="{{ site.github.tar_url }}" class="btn">Download .tar.gz</a>
+        <div id="download-links"></div>
+        <a id="download-generic-link" href="{{ site.github.releases_url }}">Visit the latest release</a>
       {% endif %}
     </header>
 
