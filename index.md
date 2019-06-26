@@ -52,20 +52,43 @@ to compute the next greeting in parallel to printing the current one.
 
 ## Show me Code!
 
-- Parallelize your Rust code with the [ohua-rust-runtime](https://github.com/ohua-dev/ohua-rust-runtime)
-- The standalone compiler for algorithms: [ohuac](https://github.com/ohua-dev/ohuac) (usually used in conjunction with an Ohua backend/runtime)
-- Make your enterprise application both fast and secure with the [ohua-jvm-integration](https://github.com/ohua-dev/ohua-jvm-integration) with support for both Java and Clojure (also on [clojars](https://clojars.org/ohua))
-- Batch you I/O with little to no effort using the [Yauhau project](https://github.com/ohua-dev/yauhau)
-- Hack on/with the [ohua-core](https://github.com/ohua-dev/ohua-core) library to make your own Ohua or help us make it better
+- Parallelize your Rust code with the
+  [ohua-rust-runtime](https://github.com/ohua-dev/ohua-rust-runtime)
+- The standalone compiler for algorithms:
+  [ohuac](https://github.com/ohua-dev/ohuac) (usually used in conjunction with
+  an Ohua backend/runtime)
+- Make your enterprise application both fast and secure with the
+  [ohua-jvm-integration](https://github.com/ohua-dev/ohua-jvm-integration) with
+  support for both Java and Clojure (also on
+  [clojars](https://clojars.org/ohua))
+- Batch you I/O with little to no effort using the [Yauhau
+  project](https://github.com/ohua-dev/yauhau)
+- Hack on/with the [ohua-core](https://github.com/ohua-dev/ohua-core) library to
+  make your own Ohua or help us make it better
+- The principles of Ohua as an embedded Haskell library for implicit
+  parallelism: [stc-lang](https://github.com/ohua-dev/stc-lang). The name
+  derives from the [associated publication][stc-lang-pub].
 
-You can also visit the [Ohua Development Organization](https://github.com/ohua-dev). The Ohua core library, compiler and backends are developed under this umbrella.
+You can also visit the [Ohua Development
+Organization](https://github.com/ohua-dev). The Ohua core library, compiler and
+backends are developed under this umbrella.
 
 ## Publications
 
 Here we list the papers we have published about Ohua and its applications.
 
-* The idea of stateful functions and algorithms that a compiler can translate into a dataflow-based runtime system can be found [here](https://dl.acm.org/citation.cfm?id=2807431).
-* Stateful loops (`smap`) and their translation into dataflow have been applied to bottlenecks in big data engines have been published [here](https://cfaed.tu-dresden.de/files/Images/people/chair-cc/publications/1802_Ertel_PMAM.pdf).
-* Some internals of our compiler and transformations to optimize I/O in the context of micro-service deployments can be found [here](/yauhau/) and were published also [here](https://dl.acm.org/citation.cfm?id=3179505).
+* Combining monads and the Ohua programming paradigm in Haskell for embedded
+  implicit parallel programming ([link][stc-lang-pub])
+* Some internals of our compiler and transformations to optimize I/O in the
+  context of micro-service deployments can be found [here](/yauhau/) and were
+  published also [here](https://dl.acm.org/citation.cfm?id=3179505).
+* Stateful loops (`smap`) and their translation into dataflow have been applied
+  to bottlenecks in big data engines have been published
+  [here](https://cfaed.tu-dresden.de/files/Images/people/chair-cc/publications/1802_Ertel_PMAM.pdf).
+* The idea of stateful functions and algorithms that a compiler can translate
+  into a dataflow-based runtime system can be found
+  [here](https://dl.acm.org/citation.cfm?id=2807431).
 
 For a more extensive and structured view see the [bibliography](/bib/).
+
+[stc-lang-pub]: https://github.com/ohua-dev/stc-lang#publication
