@@ -55,6 +55,7 @@
   note: Bachelors Thesis
   institution: Technische Universität Dresden
   link: https://cfaed.tu-dresden.de/files/user/sertel/BachelorsThesis-Justus-Adam.pdf
+  paper: https://cfaed.tu-dresden.de/files/user/sertel/BachelorsThesis-Justus-Adam.pdf
   abstract: |
     The largest source of latency for many modern systems, particularly
     services, is the inherent latency of I/O operations. Disk I/O, database
