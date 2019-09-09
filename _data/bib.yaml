@@ -143,6 +143,6 @@
     implement parallel reductions and our programming model resolves
     short-comings of the stream-based programming model for current
     state-of-the-art big data processing systems.
-
-  slides: https://ohua-dev.github.io/slides/haskell-19-stclang.pdf
+  paper: /papers/stc-lang.pdf
+  slides: /slides/haskell-19-stclang.pdf
   website: https://github.com/ohua-dev/stc-lang
