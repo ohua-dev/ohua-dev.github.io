@@ -16,7 +16,7 @@ p.institution }}_{% endif %}
 
 {{ p.date }}
 
-{% if p.abstract %}{{p.abstract}}{% endif %}
+{% if p.abstract %}{{p.abstract|markdownify}}{% endif %}
 
 {% if p.website %}[Website]({{p.website}}){% endif %}
 
@@ -24,6 +24,6 @@ p.institution }}_{% endif %}
 
 {% if p.slides %}[Slides]({{p.slides}}){% endif %}
 {% unless forloop.last %}
-<hr width="36%">
+<hr width="70%">
 {% endunless %}
 {% endfor %}

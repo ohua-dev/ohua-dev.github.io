@@ -103,3 +103,45 @@
     concurrency control based on shared-memory synchronization.
   paper: https://cfaed.tu-dresden.de/files/user/sertel/ohua_pppj.pdf
   slides: https://cfaed.tu-dresden.de/files/user/sertel/presentation_pppj.pdf
+- title: "STCLang: State Thread Composition as a Foundation for Monadic Dataflow Parallelism"
+  date: "2019-07-23"
+  link: https://doi.org/10.1145/3331545.3342600
+  publication: "Proceedings of the 12th ACM SIGPLAN International Symposium on Haskell"
+  authors:
+    - Sebastian Ertel
+    - Justus Adam
+    - Norman A. Rink
+    - Andrés Goens
+    - Jeronimo Castrillon
+  abstract: |
+    Dataflow execution models are used to build highly scalable parallel
+    systems. A programming model that targets parallel dataflow execution must
+    answer the following question: How can parallelism between two dependent
+    nodes in a dataflow graph be exploited? This is difficult when the dataflow
+    language or programming model is implemented by a monad, as is common in the
+    functional community, since expressing dependence between nodes by a monadic
+    bind suggests sequential execution.
+
+    Even in monadic constructs that explicitly separate state from computation,
+    problems arise due to the need to reason about opaquely defined state.
+    Specifically, when abstractions of the chosen programming model do not
+    enable adequate reasoning about state, it is difficult to detect parallelism
+    between composed stateful computations.
+
+    In this paper, we propose a programming model that enables the composition
+    of stateful computations and still exposes opportunities for
+    parallelization. We also introduce `smap`, a higher-order function that can
+    exploit parallelism in stateful computations. We present an implementation
+    of our programming model and `smap` in Haskell and show that basic concepts
+    from functional reactive programming can be built on top of our programming
+    model with little effort. We compare these implementations to a
+    state-of-the-art approach using monad-par and LVars to expose parallelism
+    explicitly and reach the same level of performance, showing that our
+    programming model successfully extracts parallelism that is present in an
+    algorithm. Further evaluation shows that `smap` is expressive enough to
+    implement parallel reductions and our programming model resolves
+    short-comings of the stream-based programming model for current
+    state-of-the-art big data processing systems.
+
+  slides: https://ohua-dev.github.io/slides/haskell-19-stclang.pdf
+  website: https://github.com/ohua-dev/stc-lang
