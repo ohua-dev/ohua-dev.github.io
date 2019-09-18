@@ -75,6 +75,8 @@ backends are developed under this umbrella.
 
 ## Publications
 
+If you are looking for an overview of the ideas and concepts that underpin Ohua then have a look at this [presentation](/slides/phd-defense-sebastian-19.pdf]).
+
 Here we list the papers we have published about Ohua and its applications.
 
 * Combining monads and the Ohua programming paradigm in Haskell for embedded
